@@ -15,7 +15,7 @@ export class FrontpageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.data().subscribe((res: any) => {
+    this.http.getNews().subscribe((res: any) => {
       console.log(res.items);
       this.news = res.items;
     });

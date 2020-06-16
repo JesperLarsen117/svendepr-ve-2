@@ -1,0 +1,128 @@
+main {
+    width: 60%;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        margin: 1em;
+        text-transform: uppercase;
+    }
+
+    .filter-settings {
+        width: 100%;
+        background-color: #292929;
+        display: grid;
+        grid-template-columns: auto 1fr 1fr 1fr 1fr 1fr;
+        margin-bottom: 2em;
+
+        button {
+            padding: 1em;
+            border: none;
+            background-color: #292929;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .all_scenes {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #9c930e;
+            }
+        }
+
+        .red_scenes {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #ac324c;
+            }
+        }
+
+        .blue_scenes {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #336699;
+            }
+        }
+
+        .green_scenes {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #638b3f;
+            }
+        }
+
+        .purple_scenes {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #88267f;
+            }
+        }
+
+        .filter_setting {
+            transition: 200ms ease-in-out;
+
+            &:hover {
+                background-color: #9c930e;
+            }
+        }
+    }
+
+    .lineUp-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-bottom: 2em;
+
+        article {
+            figure {
+                width: 100%;
+                height: 260px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 260px;
+                    object-fit: cover;
+                }
+            }
+
+            .artist-info {
+                color: white;
+                padding: 1em;
+
+                h2 {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 340px;
+                    white-space: nowrap;
+                }
+
+                p {
+                    margin-top: .5em;
+                }
+            }
+
+            .red {
+                background-color: #ac324c;
+            }
+
+            .blue {
+                background-color: #336699;
+            }
+
+            .green {
+                background-color: #638b3f;
+            }
+
+            .purple {
+                background-color: #88267f;
+            }
+        }
+    }
+}

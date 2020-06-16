@@ -9,13 +9,15 @@ import { FooterComponent } from './partials/footer/footer.component';
 
 // Http module
 import { HttpClientModule } from '@angular/common/http';
+import { LineUpComponent } from './pages/line-up/line-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FrontpageComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    LineUpComponent
   ],
   imports: [
     BrowserModule,

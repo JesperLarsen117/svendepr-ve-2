@@ -10,8 +10,10 @@ export class HttpService {
   constructor(private http: HttpClient) {
   }
 
-  data() {
+  getNews() {
     return this.http.get('https://api.mediehuset.net/mediesuset/news');
-
+  }
+  getEvents() {
+    return this.http.get('https://api.mediehuset.net/mediesuset/events');
   }
 }

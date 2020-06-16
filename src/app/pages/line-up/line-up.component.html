@@ -1,0 +1,32 @@
+<app-nav></app-nav>
+<main>
+    <h1>Line-up</h1>
+    <section class="filter-settings">
+        <button class="all_scenes filter-buttons" (click)="onClickFilter('all', $event)" type="button">A-Å</button>
+        <button class="red_scenes filter-buttons" (click)="onClickFilter('filter-red', $event)" type="button">Rød
+            scene</button>
+        <button class="blue_scenes filter-buttons" (click)="onClickFilter('filter-blue', $event)" type="button">Blå
+            scene</button>
+        <button class="green_scenes filter-buttons" (click)="onClickFilter('filter-green', $event)" type="button">Grøn
+            scene</button>
+        <button class="purple_scenes filter-buttons" (click)="onClickFilter('filter-purple', $event)"
+            type="button">Lilla
+            scene</button>
+        <button class="filter_setting" type="button">Filter</button>
+    </section>
+    <section class="lineUp-container">
+        <article *ngFor="let item of lineUp; let i = index">
+            <div *ngIf="item.type_id === '1' || item.type_id === '2' || item.type_id === '3'"
+                class="filter-{{scene[i]}} filter">
+                <figure>
+                    <img [src]=" item.image" alt="">
+                </figure>
+                <div class="artist-info {{scene[i]}}">
+                    <h2>{{item.title}}</h2>
+                    <p>{{time[i]}}</p>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+<app-footer></app-footer>
