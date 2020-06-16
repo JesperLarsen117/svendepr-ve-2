@@ -4,7 +4,8 @@ import { FrontpageComponent } from './pages/frontpage/frontpage.component';
 
 
 const routes: Routes = [
-  { path: '', component: FrontpageComponent}
+  { path: '', component: FrontpageComponent },
+  { path: 'news/:id', component: FrontpageComponent }
 ];
 
 @NgModule({

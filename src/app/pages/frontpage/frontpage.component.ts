@@ -1,4 +1,6 @@
+import { HttpService } from './../../services/http.service';
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-frontpage',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frontpage.component.scss']
 })
 export class FrontpageComponent implements OnInit {
+  news;
+  constructor(public http: HttpService) {
 
-  constructor() { }
+
+  }
 
   ngOnInit(): void {
+    this.http.data().subscribe((res: any) => {
+      console.log(res.items);
+      this.news = res.items;
+    });
   }
 
 }

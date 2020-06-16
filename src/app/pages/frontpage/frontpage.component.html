@@ -1,2 +1,22 @@
-<app-nav></app-nav>
-<p>frontpage works!</p>
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image.jpg" alt="header image crowd">
+    </figure>
+</header>
+<main class="container">
+    <h1>Nyheder</h1>
+    <section class="news-articles">
+        <article *ngFor="let item of news| slice:0:6">
+            <figure>
+                <img src="{{item.image}}" alt="">
+            </figure>
+            <h2>{{item.title}}</h2>
+            <p>{{item.teaser}}</p>
+            <div class="fadeout"></div>
+            <a [routerLink]="'news/' + item.id">Læs mere</a>
+        </article>
+    </section>
+    <a id="nyhedsarkiv" routerLink="">Nyhedsarkiv</a>
+</main>
+<app-footer></app-footer>
