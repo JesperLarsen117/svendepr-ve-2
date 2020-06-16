@@ -1,0 +1,28 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image02.jpg" alt="header image crowd">
+    </figure>
+</header>
+<main>
+    <h1>Køb Billet</h1>
+    <h2 class="ticket-title">Partout billet - alle dage</h2>
+
+    <section class="bundle">
+        <article *ngFor="let item of ticketsBundle">
+            <h3>{{item.name}}</h3>
+            <h3 class="price">{{item.price}}</h3>
+            <a routerLink="buy-ticket/{{item.id}}">Køb billet</a>
+        </article>
+    </section>
+    <h2 class="ticket-title">Enkeltbilleter</h2>
+
+    <section class="day">
+        <article *ngFor="let item of ticketDay">
+            <h3>{{item.name}}</h3>
+            <h3 class="price">{{item.price}}</h3>
+            <a routerLink="buy-ticket/{{item.id}}">Køb billet</a>
+        </article>
+    </section>
+</main>
+<app-footer></app-footer>

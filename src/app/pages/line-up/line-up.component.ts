@@ -31,7 +31,7 @@ export class LineUpComponent implements OnInit {
 
       res.items.forEach(element => {
         if (element.type_id === '1' || element.type_id === '2' || element.type_id === '3') {
-          let d = new Date(element.local_time);
+          const d = new Date(element.local_time);
           timeArr.push(`${dayArr[d.getDay()]} kl. ${d.getHours()}:${(d.getMinutes() === 0) ? '00' : '00'}`);
           lineUpArr.push(this.lineUp = element);
           switch (element.stage_id) {
@@ -61,54 +61,42 @@ export class LineUpComponent implements OnInit {
     });
   }
   onClickFilter(className, e) {
-    const allButtons = document.getElementsByClassName('filter-buttons') as unknown as NodeListOf<HTMLElement>;
-    const elem = document.getElementsByClassName(className);
     const allElm = document.getElementsByClassName('filter');
     const buttonHtml = e.target as HTMLElement;
     Array.prototype.forEach.call(allElm, (el: HTMLElement) => {
       const parrent = el.parentNode as HTMLElement;
-      if (className !== 'all') {
-        if (el.classList[1] === className) {
-          parrent.style.display = 'block';
-        } else {
-          parrent.style.display = 'none';
-        }
-      } else {
-        parrent.style.display = 'block';
-      }
+      (className !== 'all')
+        ? (el.classList[1] === className)
+          ? parrent.style.display = 'block'
+          : parrent.style.display = 'none'
+        : parrent.style.display = 'block';
+
 
       switch (className) {
         case 'filter-red':
-          Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
-            el.style.backgroundColor = '#292929';
-          });
-          buttonHtml.style.backgroundColor = '#ac324c';
+          this.switchBtnBackground(buttonHtml, '#ac324c');
           break;
         case 'filter-blue':
-          Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
-            el.style.backgroundColor = '#292929';
-          });
-          buttonHtml.style.backgroundColor = '#336699';
+          this.switchBtnBackground(buttonHtml, '#336699');
           break;
         case 'filter-green':
-          Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
-            el.style.backgroundColor = '#292929';
-          });
-          buttonHtml.style.backgroundColor = '#638b3f';
+          this.switchBtnBackground(buttonHtml, '#638b3f');
           break;
         case 'filter-purple':
-          Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
-            el.style.backgroundColor = '#292929';
-          });
-          buttonHtml.style.backgroundColor = '#88267f';
+          this.switchBtnBackground(buttonHtml, '#88267f');
           break;
         default:
-          Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
-            el.style.backgroundColor = '#292929';
-          });
-          buttonHtml.style.backgroundColor = '#9c930e';
+          this.switchBtnBackground(buttonHtml, '#9c930e');
           break;
       }
     });
+  }
+
+  switchBtnBackground(btn, color) {
+    const allButtons = document.getElementsByClassName('filter-buttons') as unknown as NodeListOf<HTMLElement>;
+    Array.prototype.forEach.call(allButtons, (el: HTMLElement) => {
+      el.style.backgroundColor = '#292929';
+    });
+    btn.style.backgroundColor = color;
   }
 }

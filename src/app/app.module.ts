@@ -10,6 +10,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 // Http module
 import { HttpClientModule } from '@angular/common/http';
 import { LineUpComponent } from './pages/line-up/line-up.component';
+import { TicketsComponent } from './pages/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LineUpComponent } from './pages/line-up/line-up.component';
     FrontpageComponent,
     NavComponent,
     FooterComponent,
-    LineUpComponent
+    LineUpComponent,
+    TicketsComponent,
   ],
   imports: [
     BrowserModule,
