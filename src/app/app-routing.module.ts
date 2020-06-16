@@ -1,3 +1,4 @@
+import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
 import { LineUpComponent } from './pages/line-up/line-up.component';
 import { NgModule, Component } from '@angular/core';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'news/:id', component: FrontpageComponent },
   { path: 'line-up', component: LineUpComponent },
   { path: 'tickets', component: TicketsComponent },
+  { path: 'buy-ticket/:id', component: BuyTicketComponent },
 ];
 
 @NgModule({

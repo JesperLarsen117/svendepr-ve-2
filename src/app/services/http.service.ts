@@ -16,7 +16,8 @@ export class HttpService {
   getEvents() {
     return this.http.get('https://api.mediehuset.net/mediesuset/events');
   }
-  getTickets() {
-    return this.http.get('https://api.mediehuset.net/mediesuset/tickets');
+  getTickets(id) {
+    return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/tickets')
+      : this.http.get(`https://api.mediehuset.net/mediesuset/tickets/${id}`);
   }
 }

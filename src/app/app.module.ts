@@ -11,6 +11,7 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LineUpComponent } from './pages/line-up/line-up.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
+import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TicketsComponent } from './pages/tickets/tickets.component';
     FooterComponent,
     LineUpComponent,
     TicketsComponent,
+    BuyTicketComponent,
   ],
   imports: [
     BrowserModule,

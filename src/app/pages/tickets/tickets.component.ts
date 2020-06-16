@@ -14,7 +14,7 @@ export class TicketsComponent implements OnInit {
   ngOnInit(): void {
     const bundle = [];
     const day = [];
-    this.http.getTickets().subscribe((res: any) => {
+    this.http.getTickets('').subscribe((res: any) => {
       console.log(res.items);
       Array.prototype.forEach.call(res.items, (el) => {
         if (el.id === '1' || el.id === '2') {

@@ -1,0 +1,30 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image02.jpg" alt="header image crowd">
+    </figure>
+</header>
+<main>
+    <h1>Køb billet</h1>
+    <h2>Information om den valgte billet</h2>
+    <section class="information">
+        <h3>{{ticketInfo.name}}</h3>
+        <p>{{ticketInfo.description}}</p>
+    </section>
+    <h2>bestilling</h2>
+    <section class="order">
+        <div class="order-amount">
+            <input (change)="ticketAmountChange($event.target.value)" type="number" name="amout" id="amount" value="1">
+            <p>stk.</p>
+            <p>{{ticketInfo.name}}</p>
+            <p>á</p>
+            <p id="price">DKK {{ticketInfo.price}}</p>
+            <p>DKk {{price}}</p>
+        </div>
+        <div class="full-price">
+            <p>Pris i alt:</p>
+            <p>DKK {{price}}</p>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>

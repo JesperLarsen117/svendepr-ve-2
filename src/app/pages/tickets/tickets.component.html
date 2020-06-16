@@ -12,7 +12,7 @@
         <article *ngFor="let item of ticketsBundle">
             <h3>{{item.name}}</h3>
             <h3 class="price">{{item.price}}</h3>
-            <a routerLink="buy-ticket/{{item.id}}">Køb billet</a>
+            <a [routerLink]="'/buy-ticket/' + item.id">Køb billet</a>
         </article>
     </section>
     <h2 class="ticket-title">Enkeltbilleter</h2>
@@ -21,7 +21,7 @@
         <article *ngFor="let item of ticketDay">
             <h3>{{item.name}}</h3>
             <h3 class="price">{{item.price}}</h3>
-            <a routerLink="buy-ticket/{{item.id}}">Køb billet</a>
+            <a [routerLink]="'/buy-ticket/' + item.id">Køb billet</a>
         </article>
     </section>
 </main>
