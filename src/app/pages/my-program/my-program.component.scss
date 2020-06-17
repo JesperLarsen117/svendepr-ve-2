@@ -26,11 +26,22 @@ main {
                 width: 30%;
                 color: white;
             }
+
+            #delete {
+                display: block;
+                margin-left: auto;
+                margin-right: 1em;
+                cursor: pointer;
+            }
+
+            p {
+                margin-left: 1em;
+            }
         }
 
-        p {
-            margin-left: 1em;
-        }
+
+
+
 
         .red {
             background-color: #ac324c;

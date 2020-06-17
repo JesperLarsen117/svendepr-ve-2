@@ -34,4 +34,7 @@ export class HttpService {
   postProgram(formData, header) {
     return this.http.post(`https://api.mediehuset.net/mediesuset/programme`, formData, header);
   }
+  deleteProgram(id, header) {
+    return this.http.delete(`https://api.mediehuset.net/mediesuset/programme/${id}`, header);
+  }
 }

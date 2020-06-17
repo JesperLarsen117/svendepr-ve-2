@@ -82,4 +82,12 @@ export class MyProgramComponent implements OnInit {
         break;
     }
   }
+  deleteProgram(eventId, self) {
+    console.log(eventId);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.CheckLogin.getCookie('token')}`);
+    self.target.parentNode.remove();
+    this.http.deleteProgram(eventId, { headers }).subscribe((res: any) => {
+    });
+
+  }
 }

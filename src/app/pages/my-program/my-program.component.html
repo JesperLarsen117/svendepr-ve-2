@@ -6,6 +6,9 @@
         <div *ngFor="let list of item.items; let i = index" class="programs">
             <h3 [class]="item.color[i]">{{list.stage_name}} Kl. {{timeConverter(list.datetime)}}</h3>
             <p>{{list.event_title}}</p>
+            <span id="delete" class="material-icons" (click)="deleteProgram(list.id, $event)">
+                delete_forever
+            </span>
         </div>
     </section>
 </main>
