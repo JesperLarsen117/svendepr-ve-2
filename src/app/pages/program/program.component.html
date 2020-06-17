@@ -15,7 +15,7 @@
     <section class="program">
         <h2 class="red-scene">Rød scene</h2>
         <section *ngFor="let item of day; let i = index">
-            <div *ngIf="item.stage_name === 'Rød scene'" class="red-border">
+            <div *ngIf="item.stage_name === 'Rød scene'" class="red-border" (click)="addEvent(item.id)">
                 <h4>{{timeConverter(item.local_time)}}</h4>
                 <div>
                     <h3>{{item.title}}</h3>
@@ -25,7 +25,7 @@
         </section>
         <h2 class="blue-scene">Blå scene</h2>
         <section *ngFor="let item of day">
-            <div *ngIf="item.stage_name === 'Blå scene'" class="blue-border">
+            <div *ngIf="item.stage_name === 'Blå scene'" class="blue-border" (click)="addEvent(item.id)">
                 <h4>{{timeConverter(item.local_time)}}</h4>
                 <div>
                     <h3>{{item.title}}</h3>
@@ -35,7 +35,7 @@
         </section>
         <h2 class="green-scene">Grøn scene</h2>
         <section *ngFor="let item of day">
-            <div *ngIf="item.stage_name === 'Grøn scene'" class="green-border">
+            <div *ngIf="item.stage_name === 'Grøn scene'" class="green-border" (click)="addEvent(item.id)">
                 <h4>{{timeConverter(item.local_time)}}</h4>
                 <div>
                     <h3>{{item.title}}</h3>
@@ -45,7 +45,7 @@
         </section>
         <h2 class="purple-scene">Lilla scene</h2>
         <section *ngFor="let item of day">
-            <div *ngIf="item.stage_name === 'Lilla scene'" class="purple-border">
+            <div *ngIf="item.stage_name === 'Lilla scene'" class="purple-border" (click)="addEvent(item.id)">
                 <h4>{{timeConverter(item.local_time)}}</h4>
                 <div>
                     <h3>{{item.title}}</h3>

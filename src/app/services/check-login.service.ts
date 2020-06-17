@@ -8,10 +8,6 @@ export class CheckLoginService {
   toggle: BehaviorSubject<boolean> = new BehaviorSubject(false);
   toggle$ = this.toggle.asObservable();
 
-  loginCheck() {
-
-  }
-
   getCookie(name: string): string {
     const nameLenPlus = (name.length + 1);
     return document.cookie

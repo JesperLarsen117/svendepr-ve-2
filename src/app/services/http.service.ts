@@ -29,6 +29,9 @@ export class HttpService {
     return this.http.post('https://api.mediehuset.net/token', loginInfo);
   }
   getMyProgram(id, header) {
-    return this.http.post(`https://api.mediehuset.net/mediesuset/programme/${id}`, header);
+    return this.http.get(`https://api.mediehuset.net/mediesuset/programme/${id}`, header);
+  }
+  postProgram(formData, header) {
+    return this.http.post(`https://api.mediehuset.net/mediesuset/programme`, formData, header);
   }
 }
