@@ -5,11 +5,11 @@
         <span><i class="fab fa-twitter"></i></span>
     </section>
     <section class="news-letter">
-        <form>
+        <form [formGroup]="newsLetter">
             <h2>Tilmeld Nyhedsbrev</h2>
             <p>Få seneste nyt direkte til din indbakke</p>
             <div class="input-container">
-                <input type="email" name="e-mail" id="e-mail" placeholder="Indtast din e-mail">
+                <input type="email" name="e-mail" id="e-mail" placeholder="Indtast din e-mail" formControlName="email">
                 <button type="button">Tilmeld nyhedsbrev</button>
             </div>
         </form>

@@ -1,6 +1,7 @@
 import { HttpService } from './../../services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-buy-ticket',
@@ -8,6 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./buy-ticket.component.scss']
 })
 export class BuyTicketComponent implements OnInit {
+  buyFrom = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
   id = this.route.snapshot.paramMap.get('id');
   ticketInfo: any;
   price: any;

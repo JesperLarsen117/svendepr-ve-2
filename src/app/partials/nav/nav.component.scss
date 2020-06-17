@@ -59,6 +59,16 @@ nav {
         color: black;
       }
 
+      button {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: black;
+        border: none;
+        background: none;
+        font-weight: 400;
+        font-size: 1em;
+      }
+
       &:hover>ul,
       &:hover>span {
         display: block;

@@ -14,13 +14,19 @@
         expand_more
       </span>
       <ul>
-        <li><a routerLink="">Program</a></li>
+        <li><a routerLink="/program">Program</a></li>
         <li><a routerLink="/line-up">Line-up</a></li>
       </ul>
     </li>
     <li><a routerLink="/camps">Camps</a></li>
     <li><a routerLink="">Praktisk info</a></li>
-    <li><a routerLink="/login">login</a></li>
+    <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'profile' : 'login'}}</a>
+      <ul *ngIf="checkLogin">
+        <li><a routerLink="/myprogram">Mit program</a></li>
+        <li><a routerLink="/line-up">Rediger profil</a></li>
+        <li><button (click)="logout()">Logout</button></li>
+      </ul>
+    </li>
   </ul>
   <span id="search" class="material-icons">
     search

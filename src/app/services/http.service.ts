@@ -13,8 +13,9 @@ export class HttpService {
   getNews() {
     return this.http.get('https://api.mediehuset.net/mediesuset/news');
   }
-  getEvents() {
-    return this.http.get('https://api.mediehuset.net/mediesuset/events');
+  getEvents(id) {
+    return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/events')
+      : this.http.get(`https://api.mediehuset.net/mediesuset/events/${id}`);
   }
   getCamps(id) {
     return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/camps')
@@ -23,5 +24,11 @@ export class HttpService {
   getTickets(id) {
     return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/tickets')
       : this.http.get(`https://api.mediehuset.net/mediesuset/tickets/${id}`);
+  }
+  getLogin(loginInfo) {
+    return this.http.post('https://api.mediehuset.net/token', loginInfo);
+  }
+  getMyProgram(id, header) {
+    return this.http.post(`https://api.mediehuset.net/mediesuset/programme/${id}`, header);
   }
 }

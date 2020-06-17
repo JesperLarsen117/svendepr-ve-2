@@ -15,6 +15,9 @@ import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
 import { CampsComponent } from './pages/camps/camps.component';
 import { CampComponent } from './pages/camp/camp.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProgramComponent } from './pages/program/program.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MyProgramComponent } from './pages/my-program/my-program.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { LoginComponent } from './pages/login/login.component';
     CampsComponent,
     CampComponent,
     LoginComponent,
+    ProgramComponent,
+    MyProgramComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

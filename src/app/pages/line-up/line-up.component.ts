@@ -22,7 +22,7 @@ export class LineUpComponent implements OnInit {
       'Fredag',
       'Lørdag',
     ];
-    this.http.getEvents().subscribe((res: any) => {
+    this.http.getEvents('').subscribe((res: any) => {
       const timeArr = [];
       const lineUpArr = [];
       const sceneArr = [];
@@ -70,7 +70,6 @@ export class LineUpComponent implements OnInit {
           ? parrent.style.display = 'block'
           : parrent.style.display = 'none'
         : parrent.style.display = 'block';
-
 
       switch (className) {
         case 'filter-red':

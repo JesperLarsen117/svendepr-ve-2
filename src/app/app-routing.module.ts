@@ -1,3 +1,5 @@
+import { MyProgramComponent } from './pages/my-program/my-program.component';
+import { ProgramComponent } from './pages/program/program.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CampsComponent } from './pages/camps/camps.component';
 import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'buy-ticket/:id', component: BuyTicketComponent },
   { path: 'camps', component: CampsComponent },
   { path: 'camp/:id', component: CampComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'program', component: ProgramComponent },
+  { path: 'myprogram', component: MyProgramComponent }
 ];
 
 @NgModule({

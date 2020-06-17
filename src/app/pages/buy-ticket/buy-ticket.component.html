@@ -4,7 +4,7 @@
         <img src="../../../assets/images/header_image02.jpg" alt="header image crowd">
     </figure>
 </header>
-<main>
+<main *ngIf="ticketInfo" [formGroup]="buyFrom">
     <h1>Køb billet</h1>
     <h2>Information om den valgte billet</h2>
     <section class="information">
@@ -29,41 +29,44 @@
     <form>
         <section class="reserve">
             <h3 class="camp">Reserver Camp pladser</h3>
-            <input type="number" name="amout" id="amount" value="1">
+            <input type="number" name="amout" id="amount" value="1" formControl="amount">
             <select name="camp">
                 <option value="camp-colorit" id="camp-colorit">Camp colorit</option>
                 <option value="camp-kultunaut" id="camp-kultunaut">Camp kultunaut</option>
             </select>
             <h3 class="userinfo">Indtast kundeoplysninger</h3>
             <label for="e-mail">Email/Brugernavn:</label>
-            <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email">
+            <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email" formControl="email">
             <label for="pasword">Adgangskode:</label>
-            <input type="password" name="password" id="password" placeholder="Indtast en adgangskode">
+            <input type="password" name="password" id="password" placeholder="Indtast en adgangskode"
+                formControl="pass">
             <label for="repassword">Gentag adgangskode:</label>
-            <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode">
+            <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode"
+                formControl="repass">
             <label for="name">Navn:</label>
-            <input type="text" name="name" id="name" placeholder="Indtast navn">
+            <input type="text" name="name" id="name" placeholder="Indtast navn" formControl="name">
             <label for="address">Adresse:</label>
-            <input type="text" name="address" id="address" placeholder="Indtast din adresse">
+            <input type="text" name="address" id="address" placeholder="Indtast din adresse" formControl="address">
             <div class="city">
                 <div>
                     <label for="postNumber">Postnummer:</label>
-                    <input type="text" name="postNumber" id="postNumber" placeholder="Indtast postnummer">
+                    <input type="text" name="postNumber" id="postNumber" placeholder="Indtast postnummer"
+                        formControl="postnumber">
                 </div>
                 <div>
                     <label for="cityName">By:</label>
-                    <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn">
+                    <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn" formControl="city">
                 </div>
             </div>
         </section>
         <section class="shipping-option">
             <div>
-                <input type="radio" name="send" id="send">
+                <input type="radio" name="send" id="send" formControl="send">
                 <label for="send"><span>Jeg ønsker billetterne tilsendt.</span>
                     Vi sender billetterne til dig med posten.</label>
             </div>
             <div>
-                <input type="radio" name="print" id="print">
+                <input type="radio" name="print" id="print" formControl="print">
                 <label for="print"><span>Jeg udskriver billetterne selv </span>
                     Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således
                     forsendelses-gebyret.</label>
