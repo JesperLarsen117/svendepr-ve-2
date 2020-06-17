@@ -1,0 +1,20 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img *ngIf="camp" [src]="camp.image" alt="header image crowd">
+    </figure>
+</header>
+<main *ngIf="camp">
+    <h1>{{camp.name}}</h1>
+    <p>{{camp.description}}</p>
+    <h4>Adgang:</h4>
+    <section class="tickets">
+        <p *ngFor="let item of camp.tickets">{{item.name}}</p>
+    </section>
+    <h4>På {{camp.name}} får du:</h4>
+    <p *ngFor="let item of camp.facilities">-{{item.title}}</p>
+    <h4>Antal pladser i alt:</h4>
+    <p>{{camp.num_people}}</p>
+</main>
+
+<app-footer></app-footer>

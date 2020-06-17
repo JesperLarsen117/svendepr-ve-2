@@ -5,6 +5,8 @@ header {
         overflow: hidden;
 
         img {
+            position: relative;
+            z-index: -1;
             width: 100%;
             object-fit: cover;
             height: 450px;

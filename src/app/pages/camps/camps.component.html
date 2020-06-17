@@ -1,0 +1,36 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image03.jpg" alt="header image crowd">
+    </figure>
+</header>
+<main>
+    <h1>Camps</h1>
+    <p class="information">På Mediesuset finder du tre camp områder som hver skiller sig ud med deres specielle stemning
+        om du enten er til
+        fest og ballade eller komfort og service på højt niveau. På alle camp områder er der adgang til forplejning i
+        form af mad og drikke, og toilet og bade faciliteter.
+        Camp områderne er placeret tæt på festivalpladsen så at vores gæster hurtigt kan komme til og fra områderne i
+        mellem de mange events.
+        Det er muligt at reservere pladser på de forskellige camp områder - dog kræver Camp Kultunaut og De Luxe 4 dages
+        partout armbånd og De luxe armbånd. Reservation kan foretages når du bestiller billet.</p>
+
+    <section class="camps">
+        <article *ngFor="let item of camps">
+            <figure>
+                <img src="{{item.image}}" alt="">
+            </figure>
+            <div>
+                <h3>{{item.name}}</h3>
+                <p class="description">{{item.description}}</p>
+            </div>
+            <div class="camp-info">
+                <p><span>Adgang:</span> Alle armbånd</p>
+                <p><span>Samlet antal pladser:</span> {{item.num_people}}</p>
+                <p><span>Ledige pladser:</span> 123</p>
+                <a routerLink="/camp/{{item.id}}">Læs mere</a>
+            </div>
+        </article>
+    </section>
+</main>
+<app-footer></app-footer>

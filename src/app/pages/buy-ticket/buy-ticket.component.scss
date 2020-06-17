@@ -5,6 +5,8 @@ header {
         overflow: hidden;
 
         img {
+            position: relative;
+            z-index: -1;
             width: 100%;
             object-fit: cover;
             height: 450px;
@@ -49,7 +51,7 @@ main {
         border-bottom: 1px solid black;
 
         input {
-            padding: 1em 1em 1em 1.2em;
+            padding: .5em .5em .5em 1.2em;
             margin: 1em;
             width: 40px;
 
@@ -87,6 +89,104 @@ main {
 
             &:nth-child(1) {
                 margin-right: 4em;
+            }
+        }
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        padding: 1em;
+        margin-bottom: 4em;
+
+        .camp {
+            margin-bottom: 1em;
+        }
+
+        .userinfo {
+            margin-top: 2em;
+        }
+
+        label {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: .5em;
+        }
+
+        input {
+            display: block;
+            padding: .5em;
+            width: 100%;
+
+            &:nth-child(2) {
+                display: inline-block;
+                padding: .5em .5em .5em 1.2em;
+                width: 40px;
+                margin-right: 1em;
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    appearance: none;
+                }
+            }
+        }
+
+        select {
+            padding: .5em;
+            width: calc(100% - 55px);
+            display: inline-block;
+        }
+
+        .city {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            gap: 1em;
+
+            div {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .shipping-option {
+            position: relative;
+
+            div {
+                display: grid;
+                grid-template-columns: auto 1fr;
+            }
+
+            input {
+                width: auto;
+                margin: 1.5em;
+                border: 0px;
+                width: 100%;
+                height: 1.5em;
+            }
+
+            label {
+                margin: 1em 1em 1em 2em;
+
+                span {
+                    display: block;
+                    font-weight: bold;
+                }
+            }
+
+            button {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: 1.2em;
+                background-color: #336699;
+                color: white;
+                padding: 1em 3em;
+                border: none;
             }
         }
     }

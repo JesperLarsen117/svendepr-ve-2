@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LineUpComponent } from './pages/line-up/line-up.component';
 import { TicketsComponent } from './pages/tickets/tickets.component';
 import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
+import { CampsComponent } from './pages/camps/camps.component';
+import { CampComponent } from './pages/camp/camp.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { BuyTicketComponent } from './pages/buy-ticket/buy-ticket.component';
     LineUpComponent,
     TicketsComponent,
     BuyTicketComponent,
+    CampsComponent,
+    CampComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

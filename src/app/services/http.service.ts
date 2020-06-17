@@ -16,6 +16,10 @@ export class HttpService {
   getEvents() {
     return this.http.get('https://api.mediehuset.net/mediesuset/events');
   }
+  getCamps(id) {
+    return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/camps')
+      : this.http.get(`https://api.mediehuset.net/mediesuset/camps/${id}`);
+  }
   getTickets(id) {
     return (id === '') ? this.http.get('https://api.mediehuset.net/mediesuset/tickets')
       : this.http.get(`https://api.mediehuset.net/mediesuset/tickets/${id}`);

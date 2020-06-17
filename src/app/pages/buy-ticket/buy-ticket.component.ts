@@ -22,12 +22,8 @@ export class BuyTicketComponent implements OnInit {
 
   }
   ticketAmountChange(amount) {
-    // tslint:disable-next-line: no-unused-expression
-    (amount <= 0) ? amount = 0 : amount;
+    (amount <= 0) ? amount = 0 : amount = amount;
     const htmlPrice = document.getElementById('price');
     this.price = parseInt(htmlPrice.textContent.replace('DKK ', ''), 10) * amount;
-    console.log(this.price);
-
   }
-
 }

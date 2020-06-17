@@ -1,0 +1,86 @@
+header {
+    figure {
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+
+        img {
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            object-fit: cover;
+            height: 450px;
+            transform: translateY(-50px);
+        }
+    }
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 1em;
+        text-transform: uppercase;
+    }
+
+    .information {
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    .camps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-top: 1em;
+        margin-bottom: 4em;
+
+        article {
+            background-color: #f4f4f4;
+
+            figure {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            p {
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            div {
+                padding: 1em;
+            }
+
+            .camp-info {}
+
+            .description {
+                height: 110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: normal;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+            }
+
+            a {
+                margin-top: 1em;
+                display: block;
+                background-color: #000000;
+                width: 100%;
+                padding: .5em;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+            }
+
+        }
+    }
+}

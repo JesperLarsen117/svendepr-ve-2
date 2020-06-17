@@ -26,5 +26,50 @@
             <p>DKK {{price}}</p>
         </div>
     </section>
+    <form>
+        <section class="reserve">
+            <h3 class="camp">Reserver Camp pladser</h3>
+            <input type="number" name="amout" id="amount" value="1">
+            <select name="camp">
+                <option value="camp-colorit" id="camp-colorit">Camp colorit</option>
+                <option value="camp-kultunaut" id="camp-kultunaut">Camp kultunaut</option>
+            </select>
+            <h3 class="userinfo">Indtast kundeoplysninger</h3>
+            <label for="e-mail">Email/Brugernavn:</label>
+            <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email">
+            <label for="pasword">Adgangskode:</label>
+            <input type="password" name="password" id="password" placeholder="Indtast en adgangskode">
+            <label for="repassword">Gentag adgangskode:</label>
+            <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode">
+            <label for="name">Navn:</label>
+            <input type="text" name="name" id="name" placeholder="Indtast navn">
+            <label for="address">Adresse:</label>
+            <input type="text" name="address" id="address" placeholder="Indtast din adresse">
+            <div class="city">
+                <div>
+                    <label for="postNumber">Postnummer:</label>
+                    <input type="text" name="postNumber" id="postNumber" placeholder="Indtast postnummer">
+                </div>
+                <div>
+                    <label for="cityName">By:</label>
+                    <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn">
+                </div>
+            </div>
+        </section>
+        <section class="shipping-option">
+            <div>
+                <input type="radio" name="send" id="send">
+                <label for="send"><span>Jeg ønsker billetterne tilsendt.</span>
+                    Vi sender billetterne til dig med posten.</label>
+            </div>
+            <div>
+                <input type="radio" name="print" id="print">
+                <label for="print"><span>Jeg udskriver billetterne selv </span>
+                    Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således
+                    forsendelses-gebyret.</label>
+            </div>
+            <button type="submit">Send</button>
+        </section>
+    </form>
 </main>
 <app-footer></app-footer>
