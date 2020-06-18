@@ -26,7 +26,7 @@
             <p>DKK {{price}}</p>
         </div>
     </section>
-    <form>
+    <form [formGroup]="buyFrom">
         <section class="reserve">
             <h3 class="camp">Reserver Camp pladser</h3>
             <input type="number" name="amout" id="amount" value="1" formControl="amount">

@@ -27,33 +27,29 @@ export class MyProgramComponent implements OnInit {
     const useriId = this.CheckLogin.getCookie('user_id');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.CheckLogin.getCookie('token')}`);
     this.http.getMyProgram(useriId, { headers }).subscribe((res: any) => {
-      res.items.forEach(element => {
-        const d = new Date(element.datetime).getDay();
-
+      res.items.forEach(elm => {
+        const d = new Date(elm.datetime).getDay();
+        // if (d === 3) { wed.push(elm); colorWed.push(this.chooseColor(elm.stage_name)); }
+        // if (d === 4) { thu.push(elm); colorThu.push(this.chooseColor(elm.stage_name)); }
+        // if (d === 5) { fri.push(elm); colorFri.push(this.chooseColor(elm.stage_name)); }
+        // if (d === 6) { sat.push(elm); colorSat.push(this.chooseColor(elm.stage_name)); }
         switch (d) {
           case 3:
-            wed.push(element);
-            colorWed.push(this.chooseColor(element.stage_name));
+            wed.push(elm); colorWed.push(this.chooseColor(elm.stage_name));
             break;
           case 4:
-            thu.push(element);
-            colorThu.push(this.chooseColor(element.stage_name));
-
+            thu.push(elm); colorThu.push(this.chooseColor(elm.stage_name));
             break;
           case 5:
-            fri.push(element);
-            colorFri.push(this.chooseColor(element.stage_name));
-
+            fri.push(elm); colorFri.push(this.chooseColor(elm.stage_name));
             break;
           case 6:
-            sat.push(element);
-            colorSat.push(this.chooseColor(element.stage_name));
+            sat.push(elm); colorSat.push(this.chooseColor(elm.stage_name));
             break;
           default:
             break;
         }
       });
-
     });
     this.myProgram = [
       { day: 'Onsdag', color: colorWed, items: wed },

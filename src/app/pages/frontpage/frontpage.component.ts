@@ -9,16 +9,15 @@ import { map } from 'rxjs/operators';
 })
 export class FrontpageComponent implements OnInit {
   news;
+  data: any;
   constructor(public http: HttpService) {
 
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.http.getNews().subscribe((res: any) => {
-      console.log(res.items);
       this.news = res.items;
     });
   }
-
 }
