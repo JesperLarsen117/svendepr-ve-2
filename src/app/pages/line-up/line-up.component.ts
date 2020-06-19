@@ -59,6 +59,7 @@ export class LineUpComponent implements OnInit {
       this.scene = sceneArr;
 
     });
+    this.waitForElementToDisplay('.lineUpCard', 200);
   }
   onClickFilter(className, e) {
     const allElm = document.getElementsByClassName('filter');
@@ -97,5 +98,23 @@ export class LineUpComponent implements OnInit {
       el.style.backgroundColor = '#292929';
     });
     btn.style.backgroundColor = color;
+  }
+
+  waitForElementToDisplay(selector, time) {
+    if (document.querySelector(selector) != null) {
+      const newsArticles = document.querySelectorAll('.lineUpCard');
+      console.log(newsArticles);
+      Array.prototype.forEach.call(newsArticles, (el: HTMLElement, index) => {
+        el.style.animationName = 'lineUp-cards-animation';
+        el.style.animationDuration = 200 * index + 'ms';
+        el.style.animationDelay = 0 * index + 'ms';
+        el.style.animationFillMode = 'forwards';
+      });
+      return;
+    } else {
+      setTimeout(() => {
+        this.waitForElementToDisplay(selector, time);
+      }, time);
+    }
   }
 }

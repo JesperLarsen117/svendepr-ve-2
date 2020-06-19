@@ -1,0 +1,23 @@
+main {
+    margin: 4em 0 8em 0;
+    text-align: center;
+    padding: 1em;
+
+    span {
+        background-color: #43e743;
+        color: #ffffff;
+        font-size: 5em;
+        padding: .2em;
+        border-radius: 50%;
+        margin: .2em;
+    }
+
+    a {
+        display: inline-block;
+        background-color: #336699;
+        color: white;
+        padding: 1em 2em;
+        text-decoration: none;
+        margin-top: 2em;
+    }
+}

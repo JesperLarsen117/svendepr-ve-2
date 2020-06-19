@@ -20,6 +20,7 @@ export class NavComponent implements OnInit {
     } else {
       this.checkLogin = false;
     }
+
   }
   checkLoggedIn(check) {
     if (check) {
@@ -32,5 +33,9 @@ export class NavComponent implements OnInit {
     this.CheckLogin.setCookie('token', '', -7);
     this.CheckLogin.setCookie('user_id', '', -7);
     this.checkLogin = false;
+  }
+  toogleMenu(e) {
+    console.dir(e.target.parentNode.childNodes[2]);
+    e.target.parentNode.childNodes[2].classList.toggle('toogle');
   }
 }

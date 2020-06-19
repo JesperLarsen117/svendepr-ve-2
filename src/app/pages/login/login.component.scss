@@ -1,3 +1,5 @@
+@import '../../media.scss';
+
 header {
     figure {
         width: 100%;
@@ -19,6 +21,10 @@ main {
     width: 60%;
     margin: 0 auto;
 
+    @include tablet {
+        width: 80%;
+    }
+
     h1 {
         text-align: center;
         margin-bottom: 1em;
@@ -28,6 +34,14 @@ main {
     form {
         width: 50%;
         margin-bottom: 4em;
+
+        @include mobile-big {
+            width: 80%;
+        }
+
+        @include mobile {
+            width: 100%
+        }
 
         h2 {
             margin: 1em 0;

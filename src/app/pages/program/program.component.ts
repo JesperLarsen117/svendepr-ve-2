@@ -4,11 +4,13 @@ import { HttpService } from './../../services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { time } from 'console';
 import { HttpHeaders } from '@angular/common/http';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-program',
   templateUrl: './program.component.html',
-  styleUrls: ['./program.component.scss']
+  styleUrls: ['./program.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProgramComponent implements OnInit {
   wednesday: any;
@@ -79,25 +81,32 @@ export class ProgramComponent implements OnInit {
         break;
     }
   }
-  addEvent(eventid: any) {
+  addEvent(eventid: any, title) {
     const useriId = this.CheckLogin.getCookie('user_id');
     const token = this.CheckLogin.getCookie('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    console.dir(token);
-
     const formData: any = new FormData();
     formData.append('user_id', useriId);
     formData.append('event_id', eventid);
-
-    console.log(formData);
-
-    this.http.postProgram(formData, { headers }).subscribe(res => {
+    this.http.postProgram(formData, { headers }).subscribe((res: any) => {
       console.log(res);
+      if (res.status === true) {
+        document.body.insertAdjacentHTML('afterbegin', `
+          <section class="confirm">
+            <p>${title} er blevet tilføjet til Mit program.</p>
+          </section>
+        `);
+
+        setTimeout(() => {
+          document.getElementsByClassName('confirm')[0].remove();
+        }, 2000);
+      }
     });
   }
   timeConverter(datetime: number) {
     const d = new Date(datetime);
-    return `${d.getHours()}:${(d.getMinutes() === 0) ? '00' : '00'}`;
+    const h = (d.getHours() <= 9) ? `0${d.getHours()}` : d.getHours();
+    const m = (d.getMinutes() === 0) ? '00' : d.getMinutes();
+    return `${h}:${m}`;
   }
 }
-

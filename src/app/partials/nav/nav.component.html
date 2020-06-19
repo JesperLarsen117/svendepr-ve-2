@@ -1,4 +1,4 @@
-<nav>
+<nav class="desktop">
   <figure routerLink="/">
     <img src="../../../assets/images/mediehuset-logo.png" alt="Mediesuset logo">
     <figcaption>
@@ -21,6 +21,9 @@
     <li><a routerLink="/camps">Camps</a></li>
     <li><a routerLink="">Praktisk info</a></li>
     <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'profile' : 'login'}}</a>
+      <span id="arrow_down" class="material-icons">
+        expand_more
+      </span>
       <ul *ngIf="checkLogin">
         <li><a routerLink="/myprogram">Mit program</a></li>
         <li><a routerLink="/line-up">Rediger profil</a></li>
@@ -31,4 +34,35 @@
   <span id="search" class="material-icons">
     search
   </span>
+</nav>
+
+
+
+<nav class="mobile">
+  <span id="burger" class="material-icons" (click)="toogleMenu($event)">
+    menu
+  </span>
+  <figure routerLink="/">
+    <img src="../../../assets/images/mediehuset-logo.png" alt="Mediesuset logo">
+    <figcaption>
+      <h2>Medie<span>suset</span></h2>
+      <p>4 - 5 - 6 - 7. juli 2020</p>
+    </figcaption>
+  </figure>
+  <section class="menu">
+    <ul>
+      <li><a id="cta" routerLink="/tickets">Køb billet</a></li>
+      <li><a routerLink="">Nyheder</a></li>
+      <li><a routerLink="">Events</a>
+      </li>
+      <li><a routerLink="/program">Program</a></li>
+      <li><a routerLink="/line-up">Line-up</a></li>
+      <li><a routerLink="/camps">Camps</a></li>
+      <li><a routerLink="/info">Praktisk info</a></li>
+      <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'profile' : 'login'}}</a>
+      <li *ngIf="checkLogin"><a routerLink="/myprogram">Mit program</a></li>
+      <li *ngIf="checkLogin"><a routerLink="/line-up">Rediger profil</a></li>
+      <li *ngIf="checkLogin"><button (click)="logout()">Logout</button></li>
+    </ul>
+  </section>
 </nav>

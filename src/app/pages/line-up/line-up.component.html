@@ -15,7 +15,7 @@
         <button class="filter_setting" type="button">Filter</button>
     </section>
     <section class="lineUp-container">
-        <article *ngFor="let item of lineUp; let i = index">
+        <article *ngFor="let item of lineUp; let i = index" class="lineUpCard">
             <div *ngIf="item.type_id === '1' || item.type_id === '2' || item.type_id === '3'"
                 class="filter-{{scene[i]}} filter">
                 <figure>

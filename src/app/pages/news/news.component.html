@@ -7,7 +7,7 @@
 <main class="container">
     <h1>Nyheder</h1>
     <section class="news-articles">
-        <article class="news" *ngFor="let item of news| slice:0:6">
+        <article class="news" *ngFor="let item of news">
             <figure>
                 <img src="{{item.image}}" alt="">
             </figure>
@@ -17,6 +17,6 @@
             <a [routerLink]="'/article/' + item.id">Læs mere</a>
         </article>
     </section>
-    <a id="nyhedsarkiv" routerLink="/news">Nyhedsarkiv</a>
+    <a id="nyhedsarkiv" routerLink="">Nyhedsarkiv</a>
 </main>
 <app-footer></app-footer>

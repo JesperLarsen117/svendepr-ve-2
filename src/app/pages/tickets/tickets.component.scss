@@ -1,3 +1,5 @@
+@import '../../media.scss';
+
 header {
     figure {
         width: 100%;
@@ -19,6 +21,14 @@ main {
     width: 60%;
     margin: 0 auto;
 
+    @include desktop {
+        width: 80%;
+    }
+
+    @include mobile-big {
+        width: 90%;
+    }
+
     h1 {
         text-align: center;
         margin: 1em;
@@ -35,10 +45,18 @@ main {
     section {
         margin-bottom: 2em;
 
+        @include mobile-big {
+            margin-bottom: 1em
+        }
+
         article {
             display: flex;
             background-color: #e8e8e8;
             border-bottom: 1px solid black;
+
+            @include mobile-big {
+                display: block;
+            }
 
             h3 {
                 padding: 1em;
@@ -52,6 +70,7 @@ main {
             }
 
             a {
+                display: block;
                 align-self: center;
                 margin: 1em;
                 background-color: #ac324c;
@@ -60,6 +79,7 @@ main {
                 font-size: 1.2em;
                 text-decoration: none;
                 text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
             }
         }
     }

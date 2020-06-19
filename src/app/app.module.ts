@@ -18,6 +18,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProgramComponent } from './pages/program/program.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MyProgramComponent } from './pages/my-program/my-program.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ArticleComponent } from './pages/article/article.component';
+import { PurchaseAcceptedComponent } from './pages/purchase-accepted/purchase-accepted.component';
+import { InfoComponent } from './pages/info/info.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { MyProgramComponent } from './pages/my-program/my-program.component';
     LoginComponent,
     ProgramComponent,
     MyProgramComponent,
+    NewsComponent,
+    ArticleComponent,
+    PurchaseAcceptedComponent,
+    InfoComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,15 @@ export class LoginComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(public http: HttpService, public checkLogin: CheckLoginService) { }
+  constructor(public http: HttpService, public checkLogin: CheckLoginService, public CheckLogin: CheckLoginService) { }
 
   ngOnInit(): void {
+
+    if (this.CheckLogin.getCookie('user_id') != null) {
+      window.location.href = '/myprogram';
+    }
+
+
   }
   onSubmit() {
     const formData: any = new FormData();
@@ -28,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.setCookie('user_id', res.user_id, 7);
         this.login = true;
         this.checkLogin.toggle.next(this.login);
-
+        window.location.href = '/';
       }
     });
   }

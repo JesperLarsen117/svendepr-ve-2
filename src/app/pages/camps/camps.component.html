@@ -16,7 +16,7 @@
         partout armbånd og De luxe armbånd. Reservation kan foretages når du bestiller billet.</p>
 
     <section class="camps">
-        <article *ngFor="let item of camps">
+        <article *ngFor="let item of camps; let i = index">
             <figure>
                 <img src="{{item.image}}" alt="">
             </figure>
@@ -27,7 +27,8 @@
             <div class="camp-info">
                 <p><span>Adgang:</span> Alle armbånd</p>
                 <p><span>Samlet antal pladser:</span> {{item.num_people}}</p>
-                <p><span>Ledige pladser:</span> 123</p>
+                <p *ngIf="soldTickets[i]"><span>Ledige pladser:</span>
+                    {{+item.num_people - +soldTickets[i].num_tickets_sold}}</p>
                 <a routerLink="/camp/{{item.id}}">Læs mere</a>
             </div>
         </article>

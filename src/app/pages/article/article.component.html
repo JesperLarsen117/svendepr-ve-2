@@ -1,0 +1,15 @@
+<header *ngIf="article">
+    <app-nav></app-nav>
+    <figure>
+        <img [src]="article.image" alt="header image crowd">
+    </figure>
+</header>
+<main *ngIf="article">
+    <article>
+        <h1>{{article.title}}</h1>
+        <p><span>Skrevet af:</span> {{article.author}}</p>
+        <p><span>Dato:</span> {{timeConverter(+article.datetime)}}</p>
+        <p>{{article.content}}</p>
+    </article>
+</main>
+<app-footer></app-footer>

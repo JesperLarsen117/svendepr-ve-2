@@ -62,7 +62,9 @@ export class MyProgramComponent implements OnInit {
   }
   timeConverter(datetime: number) {
     const d = new Date(datetime);
-    return `${d.getHours()}:${(d.getMinutes() === 0) ? '00' : '00'}`;
+    const h = (d.getHours() <= 9) ? `0${d.getHours()}` : d.getHours();
+    const m = (d.getMinutes() === 0) ? '00' : d.getMinutes();
+    return `${h}:${m}`;
   }
   chooseColor(color) {
     switch (color) {

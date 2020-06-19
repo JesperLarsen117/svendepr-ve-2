@@ -1,3 +1,7 @@
+import { InfoComponent } from './pages/info/info.component';
+import { PurchaseAcceptedComponent } from './pages/purchase-accepted/purchase-accepted.component';
+import { ArticleComponent } from './pages/article/article.component';
+import { NewsComponent } from './pages/news/news.component';
 import { MyProgramComponent } from './pages/my-program/my-program.component';
 import { ProgramComponent } from './pages/program/program.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -13,7 +17,8 @@ import { CampComponent } from './pages/camp/camp.component';
 
 const routes: Routes = [
   { path: '', component: FrontpageComponent },
-  { path: 'news/:id', component: FrontpageComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'article/:id', component: ArticleComponent },
   { path: 'line-up', component: LineUpComponent },
   { path: 'tickets', component: TicketsComponent },
   { path: 'buy-ticket/:id', component: BuyTicketComponent },
@@ -21,7 +26,10 @@ const routes: Routes = [
   { path: 'camp/:id', component: CampComponent },
   { path: 'login', component: LoginComponent },
   { path: 'program', component: ProgramComponent },
-  { path: 'myprogram', component: MyProgramComponent }
+  { path: 'myprogram', component: MyProgramComponent },
+  { path: 'purchase-accepted', component: PurchaseAcceptedComponent },
+  { path: 'info', component: InfoComponent },
+  { path: '**', component: FrontpageComponent },
 ];
 
 @NgModule({
