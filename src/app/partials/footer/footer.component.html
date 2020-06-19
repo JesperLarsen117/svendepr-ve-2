@@ -1,25 +1,34 @@
 <footer>
-    <section class="social">
-        <h2>Følg os</h2>
-        <span><i class="fab fa-facebook-f"></i></span>
-        <span><i class="fab fa-twitter"></i></span>
-    </section>
-    <section class="news-letter">
-        <form [formGroup]="newsLetter">
-            <h2>Tilmeld Nyhedsbrev</h2>
-            <p>Få seneste nyt direkte til din indbakke</p>
-            <div class="input-container">
-                <input type="email" name="e-mail" id="e-mail" placeholder="Indtast din e-mail" formControlName="email">
-                <button type="button" (click)="onSubmit()">Tilmeld nyhedsbrev</button>
-            </div>
-        </form>
-    </section>
-    <section class="hancock">
-        <figure>
-            <img src="../../../assets/images/Hancock-kvalitet-logo.png" alt="hancock logo">
-            <figcaption>
-                <h2>- smag forskellen...</h2>
-            </figcaption>
-        </figure>
-    </section>
+  <section class="social">
+    <h2>Følg os</h2>
+    <span><i class="fab fa-facebook-f"></i></span>
+    <span><i class="fab fa-twitter"></i></span>
+  </section>
+  <section class="news-letter">
+    <form [formGroup]="newsLetter">
+      <h2>Tilmeld Nyhedsbrev</h2>
+      <p>Få seneste nyt direkte til din indbakke</p>
+      <div class="input-container">
+        <div *ngIf="email.invalid && !email.touched">
+          <input type="email" name="e-mail" id="e-mail" placeholder="Indtast din e-mail" formControlName="email">
+        </div>
+        <div class="error" *ngIf="email.invalid && email.touched">
+          <input style="border: 1px solid red;" type="email" name="e-mail" id="e-mail" placeholder="Ugyldig e-mail"
+            formControlName="email">
+        </div>
+        <div *ngIf="!email.invalid">
+          <input type="email" name="e-mail" id="e-mail" placeholder="Indtast din e-mail" formControlName="email">
+        </div>
+        <button type="button" (click)="onSubmit()">Tilmeld nyhedsbrev</button>
+      </div>
+    </form>
+  </section>
+  <section class="hancock">
+    <figure>
+      <img src="../../../assets/images/Hancock-kvalitet-logo.png" alt="hancock logo">
+      <figcaption>
+        <h2>- smag forskellen...</h2>
+      </figcaption>
+    </figure>
+  </section>
 </footer>

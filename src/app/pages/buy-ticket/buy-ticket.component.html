@@ -1,84 +1,118 @@
 <header>
-    <app-nav></app-nav>
-    <figure>
-        <img src="../../../assets/images/header_image02.jpg" alt="header image crowd">
-    </figure>
+  <app-nav></app-nav>
+  <figure>
+    <img src="../../../assets/images/header_image02.jpg" alt="header image crowd">
+  </figure>
 </header>
 <main *ngIf="ticketInfo" [formGroup]="buyFrom">
-    <h1>Køb billet</h1>
-    <h2>Information om den valgte billet</h2>
-    <section class="information">
-        <h3>{{ticketInfo.name}}</h3>
-        <p>{{ticketInfo.description}}</p>
+  <h1>Køb billet</h1>
+  <h2>Information om den valgte billet</h2>
+  <section class="information">
+    <h3>{{ticketInfo.name}}</h3>
+    <p>{{ticketInfo.description}}</p>
+  </section>
+  <h2>bestilling</h2>
+  <form [formGroup]="buyFrom">
+    <section class="order">
+      <div class="order-amount">
+        <input (keyup)="ticketAmountChange($event.target.value)" min="1" type="number" ngModel=1
+          formControlName="amount">
+        <p>stk.</p>
+        <p>{{ticketInfo.name}}</p>
+        <p>á</p>
+        <p id="price">DKK {{ticketInfo.price}}</p>
+        <p>DKk {{price}}</p>
+      </div>
+      <div class="full-price">
+        <div class="error">
+          <p *ngIf="f.amount.invalid && f.amount.touched">Hvor mange billetter vil du købe?</p>
+        </div>
+        <p>Pris i alt:</p>
+        <p>DKK {{price}}</p>
+      </div>
     </section>
-    <h2>bestilling</h2>
-    <form [formGroup]="buyFrom">
-        <section class="order">
-            <div class="order-amount">
-                <input (change)="ticketAmountChange($event.target.value)" type="number" value="1"
-                    formControlName="amount">
-                <p>stk.</p>
-                <p>{{ticketInfo.name}}</p>
-                <p>á</p>
-                <p id="price">DKK {{ticketInfo.price}}</p>
-                <p>DKk {{price}}</p>
+    <section class="personal-information">
+      <section class="reserve">
+        <h3 class="camp">Reserver Camp pladser</h3>
+        <div class="amount-container">
+          <label for="amount">Antal:</label>
+          <input type="number" name="amout" id="amount" ngModel=1 min="1" formControlName="campingAmount">
+        </div>
+        <div class="camp-container">
+          <label for="amount">Vælg camp:</label>
+          <select formControlName="campId">
+            <option selected disabled hidden value="">Vælg en camp</option>
+            <option value="1" id="camp-colorit">Camp Colorit</option>
+            <option value="2" id="camp-kultunaut">Camp Kultunaut</option>
+            <option value="3" id="camp-kultunaut">Camp De Luxe</option>
+          </select>
+        </div>
+        <div class="error" *ngIf="f.type.invalid && f.type.touched">
+          <p>Hvor mange camp pladser vil du have?</p>
+        </div>
+        <div class="error" *ngIf="f.campingAmount.invalid && f.campingAmount.touched">
+          <p>Hvilken camp vil du bo på?</p>
+        </div>
+        <h3 class="userinfo">Indtast kundeoplysninger</h3>
+        <label for="e-mail">Email/Brugernavn:</label>
+        <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email" formControlName="email">
+        <div class="error" *ngIf="f.email.invalid && f.email.touched">
+          <p>E-mail er ugyldig.</p>
+        </div>
+        <label for="pasword">Adgangskode:</label>
+        <input type="password" name="password" id="password" placeholder="Indtast en adgangskode"
+          formControlName="password">
+        <div class="error" *ngIf="f.password.invalid && f.password.touched">
+          <p>adgangskode er ugyldig.</p>
+        </div>
+        <label for="repassword">Gentag adgangskode:</label>
+        <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode"
+          formControlName="repassword">
+        <div class="error" *ngIf="!passwordMatch && f.repassword.touched">
+          <p>Adgangskoderne er ikke ens.</p>
+        </div>
+        <label for="name">Navn:</label>
+        <input type="text" name="name" id="name" placeholder="Indtast navn" formControlName="name">
+        <div class="error" *ngIf="f.name.invalid && f.name.touched">
+          <p>Hvad hedder du?</p>
+        </div>
+        <label for="address">Adresse:</label>
+        <input type="text" name="address" id="address" placeholder="Indtast din adresse" formControlName="address">
+        <div class="error" *ngIf="f.address.invalid && f.address.touched">
+          <p>Hvad er din adresse?</p>
+        </div>
+        <div class="city">
+          <div>
+            <label for="zipcode">Postnummer:</label>
+            <input type="text" placeholder="Indtast postnummer" id="zipcode" formControlName="zipcode">
+            <div class="error" *ngIf="f.zipcode.invalid && f.zipcode.touched">
+              <p>Hvad er dit post nummer?</p>
             </div>
-            <div class="full-price">
-                <p>Pris i alt:</p>
-                <p>DKK {{price}}</p>
+          </div>
+          <div>
+            <label for="cityName">By:</label>
+            <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn" formControlName="city">
+            <div class="error" *ngIf="f.city.invalid && f.city.touched">
+              <p>Hvor bor du by?</p>
             </div>
-        </section>
-        <section class="personal-information">
-            <section class="reserve">
-                <h3 class="camp">Reserver Camp pladser</h3>
-                <input type="number" name="amout" id="amount" value="1" formControlName="campingAmount">
-                <select formControlName="campId">
-                    <option value="1" id="camp-colorit">Camp Colorit</option>
-                    <option value="2" id="camp-kultunaut">Camp Kultunaut</option>
-                    <option value="3" id="camp-kultunaut">Camp De Luxe</option>
-                </select>
-                <h3 class="userinfo">Indtast kundeoplysninger</h3>
-                <label for="e-mail">Email/Brugernavn:</label>
-                <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email" formControlName="email">
-                <label for="pasword">Adgangskode:</label>
-                <input type="password" name="password" id="password" placeholder="Indtast en adgangskode"
-                    formControlName="password">
-                <label for="repassword">Gentag adgangskode:</label>
-                <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode"
-                    formControlName="repassword">
-                <label for="name">Navn:</label>
-                <input type="text" name="name" id="name" placeholder="Indtast navn" formControlName="name">
-                <label for="address">Adresse:</label>
-                <input type="text" name="address" id="address" placeholder="Indtast din adresse"
-                    formControlName="address">
-                <div class="city">
-                    <div>
-                        <label for="postNumber">Postnummer:</label>
-                        <input type="text" name="postNumber" id="postNumber" placeholder="Indtast postnummer"
-                            formControlName="zipcode">
-                    </div>
-                    <div>
-                        <label for="cityName">By:</label>
-                        <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn"
-                            formControlName="city">
-                    </div>
-                </div>
-            </section>
-            <section class="shipping-option">
-                <div>
-                    <input type="radio" id="send" value="1" formControlName="type">
-                    <label for="send"><span>Jeg ønsker billetterne tilsendt.</span>
-                        Vi sender billetterne til dig med posten.</label>
-                </div>
-                <div>
-                    <input type="radio" id="print" value="2" formControlName="type">
-                    <label for="print"><span>Jeg udskriver billetterne selv </span>
-                        Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således
-                        forsendelses-gebyret.</label>
-                </div>
-                <button type="submit" (click)="onSubmit()">Send</button>
-            </section>
-        </section>
-    </form>
+          </div>
+        </div>
+      </section>
+      <section class="shipping-option">
+        <div>
+          <input type="radio" id="send" value="1" formControlName="type">
+          <label for="send"><span>Jeg ønsker billetterne tilsendt.</span>
+            Vi sender billetterne til dig med posten.</label>
+        </div>
+        <div>
+          <input type="radio" id="print" value="2" formControlName="type">
+          <label for="print"><span>Jeg udskriver billetterne selv </span>
+            Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således
+            forsendelses-gebyret.</label>
+        </div>
+        <button [disabled]="buyFrom.invalid" type="submit" (click)="onSubmit()">Send</button>
+      </section>
+    </section>
+  </form>
 </main>
 <app-footer></app-footer>

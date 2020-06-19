@@ -20,7 +20,7 @@
     </li>
     <li><a routerLink="/camps">Camps</a></li>
     <li><a routerLink="/info">Praktisk info</a></li>
-    <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'profile' : 'login'}}</a>
+    <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'Min side' : 'login'}}</a>
       <span id="arrow_down" class="material-icons">
         expand_more
       </span>
@@ -59,7 +59,7 @@
       <li><a routerLink="/line-up">Line-up</a></li>
       <li><a routerLink="/camps">Camps</a></li>
       <li><a routerLink="/info">Praktisk info</a></li>
-      <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'profile' : 'login'}}</a>
+      <li><a [routerLink]="checkLogin ? 'profile': 'login'">{{checkLogin ? 'Min side' : 'login'}}</a>
       <li *ngIf="checkLogin"><a routerLink="/myprogram">Mit program</a></li>
       <li *ngIf="checkLogin"><a routerLink="/line-up">Rediger profil</a></li>
       <li *ngIf="checkLogin"><button (click)="logout()">Logout</button></li>

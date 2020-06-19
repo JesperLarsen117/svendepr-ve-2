@@ -1,20 +1,47 @@
 <header>
-    <app-nav></app-nav>
-    <figure>
-        <img src="../../../assets/images/header_image04.jpg" alt="header image crowd">
-    </figure>
+  <app-nav></app-nav>
+  <figure>
+    <img
+      src="../../../assets/images/header_image04.jpg"
+      alt="header image crowd"
+    />
+  </figure>
 </header>
 <main>
-    <h1>Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <h2>Indtast login oplysninger</h2>
-        <label for="e-mail">Email/brugernavn:</label>
-        <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email" formControlName="username">
-        <label for="password">Adgangskode:</label>
-        <input type="password" name="password" id="password" placeholder="Indtast den adgangkode"
-            formControlName="password">
-        <button type="submit">Login</button>
-        <a routerLink="">Glemt adgangskode?</a>
-    </form>
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Indtast login oplysninger</h2>
+    <div class="error" *ngIf="!valid">
+      <p>Login oplysninger er ikke korrete.</p>
+    </div>
+    <label for="e-mail">Email/brugernavn:</label>
+    <input
+      type="text"
+      name="e-mail"
+      id="e-mail"
+      placeholder="Indtast din email"
+      formControlName="username"
+    />
+    <div class="error" *ngIf="email.invalid && email.touched">
+      <p>
+        Din e-mail eller brugernavn er forkert.
+      </p>
+    </div>
+    <label for="password">Adgangskode:</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Indtast den adgangkode"
+      formControlName="password"
+    />
+    <div class="error" *ngIf="password.invalid && password.touched">
+      <p>
+        Der er noget galt med din adgangskode.
+      </p>
+    </div>
+    <button type="submit">Login</button>
+    <a routerLink="">Glemt adgangskode?</a>
+  </form>
 </main>
 <app-footer></app-footer>
