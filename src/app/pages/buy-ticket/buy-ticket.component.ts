@@ -21,7 +21,7 @@ export class BuyTicketComponent implements OnInit {
     email: ["", [Validators.required, Validators.email]],
     name: ["", Validators.required],
     address: ["", Validators.required],
-    zipcode: ["", [Validators.required, Validators.max(4)]],
+    zipcode: ["", Validators.required],
     city: ["", Validators.required],
     campingAmount: ["", Validators.required],
     password: ["", Validators.required],
