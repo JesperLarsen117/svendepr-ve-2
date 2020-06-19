@@ -1,0 +1,54 @@
+body {
+    scroll-behavior: smooth;
+}
+
+main {
+    width: 40%;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        margin: 1em;
+        text-transform: uppercase;
+    }
+
+    section {
+        margin-bottom: 4em;
+
+        .header {
+            position: relative;
+            cursor: pointer;
+            margin-top: 1em;
+            text-decoration: none;
+
+
+            h3 {
+                background-color: #292929;
+                color: white;
+                padding: 1em;
+            }
+
+            span {
+                position: absolute;
+                right: 1em;
+                top: 50%;
+                transform: translateY(-50%);
+                color: white;
+                font-size: 1.6em;
+            }
+        }
+
+        .text {
+            transition: all 200ms ease-in-out;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .visible {
+            animation: open 400ms forwards;
+            height: 100px;
+            padding: 1em;
+        }
+    }
+
+}

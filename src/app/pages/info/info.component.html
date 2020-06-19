@@ -3,9 +3,46 @@
     <h1>Praktisk info</h1>
     <h2>Scener</h2>
     <section>
-        <div class="header">
+        <div class="header" (click)="toogle($event); scrollToElement($event)">
             <h3>Rød Scene</h3>
-            <div></div>
+            <span class="material-icons">
+                arrow_drop_down
+            </span>
+        </div>
+        <div class="text">
+            <p>Rød scene er en udendørs scene og festivalens største og danner rammen for festivalens musikalske
+                hovednavne.</p>
+        </div>
+
+        <div class="header" (click)="toogle($event); scrollToElement($event)">
+            <h3>Blå Scene</h3>
+            <span class="material-icons">
+                arrow_drop_down
+            </span>
+        </div>
+        <div class="text">
+            <p>Blå scene er en teltscene og danner rammen for mellemstore musikalske kunstnere.</p>
+        </div>
+
+        <div class="header" (click)="toogle($event); scrollToElement($event)">
+            <h3>Grøn Scene</h3>
+            <span class="material-icons">
+                arrow_drop_down
+            </span>
+        </div>
+        <div class="text">
+            <p>Grøn scene er en oplevelsesscene som danner rammen for forskellige udstillinger.</p>
+        </div>
+
+        <div class="header" (click)="toogle($event); scrollToElement($event)">
+            <h3>Lilla Scene</h3>
+            <span class="material-icons">
+                arrow_drop_down
+            </span>
+        </div>
+        <div class="text">
+            <p>Lilla scene er den mindste teltscene og danner primært rammen for visning af film men også for
+                loungehjørnet.</p>
         </div>
     </section>
 </main>
